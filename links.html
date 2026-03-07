@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margona — روابط الفريق</title>
+<link rel="stylesheet" href="links.css">
+</head>
+<body>
+<div class="bg"><div class="bg-dots"></div><div class="orb o1"></div><div class="orb o2"></div></div>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="logo-wrap"><img src="logo.jpg" alt="Margona"></div>
+    <h1> <span>Margona</span></h1>
+    <p>الروابط الخاصه ب الاداره</p>
+  </div>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb" id="breadcrumb">
+    <span class="bc-home" onclick="goHome()">🏠 الرئيسية</span>
+    <span class="bc-sep">›</span>
+    <span class="bc-current" id="bc-text"></span>
+  </div>
+
+  <!-- SEARCH -->
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search" placeholder="ابحث..." oninput="filterCards()">
+  </div>
+
+  <!-- ═══════════════════════════════
+       VIEW: HOME
+  ═══════════════════════════════ -->
+  <div class="view active" id="view-home">
+    <div class="sec-title"><span>📁</span> الأقسام الرئيسية</div>
+    <div class="grid">
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1hnUjDiAHWQUeuegbsegiCPmKOEhcQYH456obnZwhGzI/edit?gid=1059900041#gid=1059900041" target="_blank" style="animation-delay:.05s">
+        <div class="card-top"><div class="card-icon">🏢</div><div class="card-name">شيت الإدارة</div></div>
+        <div class="card-desc">الشيتات والمستندات الإدارية للشركة</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+
+      <div class="card" onclick="openTech()" style="animation-delay:.1s">
+        <div class="card-top"><div class="card-icon">👷</div><div class="card-name">الفنيين</div></div>
+        <div class="card-desc">بيانات وجداول الفنيين الميدانيين</div>
+        <div class="card-footer"><span class="card-type">قسم</span><span class="card-arrow">›</span></div>
+      </div>
+
+      <div class="card" onclick="openCalc()" style="animation-delay:.15s">
+        <div class="card-top"><div class="card-icon">🧮</div><div class="card-name">حاسبة الأقساط</div></div>
+        <div class="card-desc">احسب قسط التكييف بسهولة</div>
+        <div class="card-footer"><span class="card-type">أداة</span><span class="card-arrow">⊕</span></div>
+      </div>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1ksabhRzVvlKRThY2gaOrMuRGvkhkF-e-/edit?gid=90833024#gid=90833024" target="_blank" style="animation-delay:.2s">
+        <div class="card-top"><div class="card-icon">🛠️</div><div class="card-name">شيت تسعير الخدمات</div></div>
+        <div class="card-desc">أسعار خدمات الصيانة والتركيب</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1CF5Fxma6xsrDuAEbrUdMlrOrjkTljXKK/edit?gid=604056958#gid=604056958" target="_blank" style="animation-delay:.25s">
+        <div class="card-top"><div class="card-icon">❄️</div><div class="card-name">شيت تسعير التكييفات</div></div>
+        <div class="card-desc">أسعار التكييفات بجميع الأحجام والماركات</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════
+       VIEW: ADMIN
+  ═══════════════════════════════ -->
+  <div class="view" id="view-admin">
+    <div class="sec-title"><span>👷</span> الفنيين</div>
+    <div class="grid">
+      <a class="card" href="https://docs.google.com/spreadsheets/d/11iAKUc3N20RGwHC8oOrwE3ItKbzC5V7MUTOMHWQjE28/edit?gid=1578303868#gid=1578303868" target="_blank" style="animation-delay:0.05s">
+        <div class="card-top"><div class="card-icon">👷</div><div class="card-name">أحمد منير</div></div>
+        <div class="card-desc">شيت متابعة أحمد منير</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1ewc5Wv1-FTOnt9XUJuEvyvkhkLUsVJdi6E4fWftnCXE/edit?gid=434353404#gid=434353404" target="_blank" style="animation-delay:0.1s">
+        <div class="card-top"><div class="card-icon">👷</div><div class="card-name">أحمد صابر</div></div>
+        <div class="card-desc">شيت متابعة أحمد صابر</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1hnUjDiAHWQUeuegbsegiCPmKOEhcQYH456obnZwhGzI/edit?gid=1059900041#gid=1059900041" target="_blank" style="animation-delay:0.15000000000000002s">
+        <div class="card-top"><div class="card-icon">👷</div><div class="card-name">محمد رضا سكران</div></div>
+        <div class="card-desc">شيت متابعة محمد رضا سكران</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/18MpwYsGwUhTY2MjwdgCCwqKn6XWPB2CyWpFyNHGLkA8/edit?gid=419895956#gid=419895956" target="_blank" style="animation-delay:0.2s">
+        <div class="card-top"><div class="card-icon">👷</div><div class="card-name">محمد علي</div></div>
+        <div class="card-desc">شيت متابعة محمد علي</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1zBEg1YRkOyhzL4SlPn6zY2x1UXD3Ba7oK6vCnTOvMCM/edit?gid=1999177983#gid=1999177983" target="_blank" style="animation-delay:0.25s">
+        <div class="card-top"><div class="card-icon">👷</div><div class="card-name">سعيد</div></div>
+        <div class="card-desc">شيت متابعة سعيد</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1ANsRDeYkYIZeGP26obWND1pXHoJBYbz4/edit?gid=2078190238#gid=2078190238" target="_blank" style="animation-delay:0.30000000000000004s">
+        <div class="card-top"><div class="card-icon">⭐</div><div class="card-name">السيد مرجونه</div></div>
+        <div class="card-desc">شيت متابعة السيد مرجونه</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+    </div>
+  </div></div>
+
+  <!-- ═══════════════════════════════
+       VIEW: TECHNICIANS
+  ═══════════════════════════════ -->
+  <div class="view" id="view-technicians">
+    <div class="sec-title"><span>👷</span> الفنيين</div>
+    <div class="grid">
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/11iAKUc3N20RGwHC8oOrwE3ItKbzC5V7MUTOMHWQjE28/edit?gid=1578303868#gid=1578303868" target="_blank" style="animation-delay:.05s">
+        <div class="card-top"><div class="card-icon">👷</div><div class="card-name">أحمد منير</div></div>
+        <div class="card-desc">شيت متابعة أحمد منير</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1ewc5Wv1-FTOnt9XUJuEvyvkhkLUsVJdi6E4fWftnCXE/edit?gid=434353404#gid=434353404" target="_blank" style="animation-delay:.1s">
+        <div class="card-top"><div class="card-icon">👷</div><div class="card-name">أحمد صابر</div></div>
+        <div class="card-desc">شيت متابعة أحمد صابر</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1hnUjDiAHWQUeuegbsegiCPmKOEhcQYH456obnZwhGzI/edit?gid=1059900041#gid=1059900041" target="_blank" style="animation-delay:.15s">
+        <div class="card-top"><div class="card-icon">👷</div><div class="card-name">محمد رضا سكران</div></div>
+        <div class="card-desc">شيت متابعة محمد رضا سكران</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/18MpwYsGwUhTY2MjwdgCCwqKn6XWPB2CyWpFyNHGLkA8/edit?gid=419895956#gid=419895956" target="_blank" style="animation-delay:.2s">
+        <div class="card-top"><div class="card-icon">👷</div><div class="card-name">محمد علي</div></div>
+        <div class="card-desc">شيت متابعة محمد علي</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1zBEg1YRkOyhzL4SlPn6zY2x1UXD3Ba7oK6vCnTOvMCM/edit?gid=1999177983#gid=1999177983" target="_blank" style="animation-delay:.25s">
+        <div class="card-top"><div class="card-icon">👷</div><div class="card-name">سعيد</div></div>
+        <div class="card-desc">شيت متابعة سعيد</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1ANsRDeYkYIZeGP26obWND1pXHoJBYbz4/edit?gid=2078190238#gid=2078190238" target="_blank" style="animation-delay:.3s">
+        <div class="card-top"><div class="card-icon">⭐</div><div class="card-name">السيد مرجونه</div></div>
+        <div class="card-desc">شيت متابعة السيد مرجونه</div>
+        <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
+      </a>
+
+    </div>
+  </div>
+
+  <div class="empty" id="empty">😔 مفيش نتائج للبحث ده</div>
+  <div class="foot">© 2025 Margona — خبراء التكييف · روابط داخلية</div>
+</div>
+
+<!-- CALCULATOR MODAL -->
+<div id="calc-modal" onclick="closeCalc()" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,30,40,0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;overflow-y:auto;">
+  <div onclick="event.stopPropagation()" style="width:100%;max-width:480px;border-radius:24px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.4);background:linear-gradient(160deg,#eaf6fb,#d6eef6);position:relative;">
+    <button onclick="closeCalc()" style="position:absolute;top:14px;left:14px;background:rgba(91,184,212,0.2);border:none;color:#1a3a45;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;z-index:1;transition:background .2s;">✕</button>
+    <div style="padding:32px 28px 36px;">
+      <div style="text-align:center;margin-bottom:22px;">
+        <div style="font-size:32px;margin-bottom:6px;">🧮</div>
+        <div style="font-size:18px;font-weight:800;color:#1a3a45;">احسب قسطك الآن</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.85);border:1.5px solid rgba(91,184,212,0.6);border-radius:20px;padding:26px 22px;">
+        <div style="margin-bottom:14px;">
+          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3a9ab8;margin-bottom:7px;">سعر الجهاز</label>
+          <div style="position:relative;"><span style="position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:14px;opacity:.4;pointer-events:none;">🏷️</span>
+          <input type="number" id="c-price" placeholder="أدخل السعر بالجنيه" min="0" style="width:100%;padding:12px 42px 12px 12px;font-family:'Segoe UI',Tahoma,Arial,sans-serif;font-size:14px;background:rgba(234,246,251,0.7);border:1.5px solid rgba(91,184,212,0.55);border-radius:11px;color:#1a3a45;outline:none;transition:all .2s;direction:ltr;text-align:right;-moz-appearance:textfield;"></div>
+        </div>
+        <div style="margin-bottom:14px;">
+          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3a9ab8;margin-bottom:7px;">عدد الأشهر (1 – 36)</label>
+          <div style="position:relative;"><span style="position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:14px;opacity:.4;pointer-events:none;">📅</span>
+          <input type="number" id="c-months" placeholder="مثال: 12" min="1" max="36" style="width:100%;padding:12px 42px 12px 12px;font-family:'Segoe UI',Tahoma,Arial,sans-serif;font-size:14px;background:rgba(234,246,251,0.7);border:1.5px solid rgba(91,184,212,0.55);border-radius:11px;color:#1a3a45;outline:none;transition:all .2s;direction:ltr;text-align:right;-moz-appearance:textfield;"></div>
+        </div>
+        <div style="margin-bottom:14px;">
+          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3a9ab8;margin-bottom:7px;">نسبة المقدم (%)</label>
+          <div style="position:relative;"><span style="position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:14px;opacity:.4;pointer-events:none;">💰</span>
+          <input type="number" id="c-down" placeholder="مثال: 25" min="0" max="100" step="1" value="25" style="width:100%;padding:12px 42px 12px 12px;font-family:'Segoe UI',Tahoma,Arial,sans-serif;font-size:14px;background:rgba(234,246,251,0.7);border:1.5px solid rgba(91,184,212,0.55);border-radius:11px;color:#1a3a45;outline:none;transition:all .2s;direction:ltr;text-align:right;-moz-appearance:textfield;"></div>
+        </div>
+        <div style="margin-bottom:14px;">
+          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#d32f2f;margin-bottom:7px;">نسبة الفائدة السنوية (%)</label>
+          <div style="position:relative;"><span style="position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:14px;opacity:.4;pointer-events:none;">📊</span>
+          <input type="number" id="c-rate" placeholder="مثال: 35" min="0" max="200" step="0.5" style="width:100%;padding:12px 42px 12px 12px;font-family:'Segoe UI',Tahoma,Arial,sans-serif;font-size:14px;background:rgba(234,246,251,0.7);border:1.5px solid rgba(91,184,212,0.55);border-radius:11px;color:#1a3a45;outline:none;transition:all .2s;direction:ltr;text-align:right;-moz-appearance:textfield;"></div>
+        </div>
+        <button onclick="calcRun()" style="width:100%;margin-top:8px;padding:14px;font-family:'Segoe UI',Tahoma,Arial,sans-serif;font-size:15px;font-weight:800;border:none;cursor:pointer;border-radius:13px;background:linear-gradient(135deg,#ef5350,#d32f2f,#a31515);color:#fff;box-shadow:0 6px 20px rgba(211,47,47,0.35);transition:transform .15s;">احسب القسط الشهري ❄️</button>
+        <div id="c-err" style="display:none;margin-top:12px;padding:10px 14px;background:rgba(211,47,47,0.08);border:1px solid rgba(211,47,47,0.25);border-radius:10px;color:#a31515;font-size:13px;text-align:center;"></div>
+        <div id="c-res" style="display:none;margin-top:18px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;font-size:11px;letter-spacing:2px;color:rgba(26,58,69,0.4);"><span style="flex:1;height:1px;background:rgba(91,184,212,0.4)"></span>النتيجة<span style="flex:1;height:1px;background:rgba(91,184,212,0.4)"></span></div>
+          <div style="background:rgba(234,246,251,0.7);border:1px solid rgba(91,184,212,0.28);border-radius:12px;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;margin-bottom:9px;">
+            <span style="font-size:13px;color:rgba(26,58,69,0.55);">💰 المقدم (<span id="c-downpct-lbl">25</span>%)</span>
+            <span id="c-r-down" style="font-size:19px;font-weight:800;color:#3a9ab8;direction:ltr;">—</span>
+          </div>
+          <div style="background:linear-gradient(135deg,rgba(211,47,47,0.08),rgba(91,184,212,0.08));border:1px solid rgba(211,47,47,0.3);border-radius:12px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;">
+            <span style="font-size:13px;color:rgba(26,58,69,0.55);">💳 القسط الشهري</span>
+            <span id="c-r-mo" style="font-size:22px;font-weight:800;color:#a31515;direction:ltr;">—</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TECHNICIANS MODAL -->
+<div id="tech-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,30,40,0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;overflow-y:auto;" onclick="closeTech()">
+  <div onclick="event.stopPropagation()" style="width:100%;max-width:560px;border-radius:24px;background:linear-gradient(160deg,#eaf6fb,#d6eef6);position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.4);animation:popIn .35s cubic-bezier(.34,1.56,.64,1) both;">
+    <button onclick="closeTech()" style="position:absolute;top:14px;left:14px;background:rgba(91,184,212,0.2);border:none;color:#1a3a45;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;z-index:10;">✕</button>
+    <div style="padding:32px 24px 32px;">
+      <div style="text-align:center;margin-bottom:22px;">
+        <div style="font-size:32px;margin-bottom:6px;">👷</div>
+        <div style="font-size:18px;font-weight:800;color:#1a3a45;">شيتات الفنيين</div>
+        <div style="font-size:12px;color:rgba(26,58,69,0.5);letter-spacing:2px;margin-top:4px;">اختر الفني لفتح شيته أو تواصل معه</div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
+        <div style="background:rgba(255,255,255,0.88);border:1.5px solid rgba(91,184,212,0.35);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#eaf6fb,#d6eef6);border:1px solid rgba(91,184,212,0.3);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">👷</div>
+            <div style="font-size:14px;font-weight:700;color:#1a3a45;">أحمد منير</div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <a href="https://docs.google.com/spreadsheets/d/11iAKUc3N20RGwHC8oOrwE3ItKbzC5V7MUTOMHWQjE28/edit?gid=1578303868#gid=1578303868" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:9px;background:rgba(91,184,212,0.12);border:1px solid rgba(91,184,212,0.4);border-radius:10px;text-decoration:none;color:#3a9ab8;font-size:12px;font-weight:700;">📊 الشيت</a>
+            <a href="https://wa.me/201100404634" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:9px;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.4);border-radius:10px;text-decoration:none;color:#1a7a3a;font-size:12px;font-weight:700;">💬 واتساب</a>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.88);border:1.5px solid rgba(91,184,212,0.35);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#eaf6fb,#d6eef6);border:1px solid rgba(91,184,212,0.3);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">👷</div>
+            <div style="font-size:14px;font-weight:700;color:#1a3a45;">أحمد صابر</div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <a href="https://docs.google.com/spreadsheets/d/1ewc5Wv1-FTOnt9XUJuEvyvkhkLUsVJdi6E4fWftnCXE/edit?gid=434353404#gid=434353404" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:9px;background:rgba(91,184,212,0.12);border:1px solid rgba(91,184,212,0.4);border-radius:10px;text-decoration:none;color:#3a9ab8;font-size:12px;font-weight:700;">📊 الشيت</a>
+            <a href="https://wa.me/201008605104" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:9px;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.4);border-radius:10px;text-decoration:none;color:#1a7a3a;font-size:12px;font-weight:700;">💬 واتساب</a>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.88);border:1.5px solid rgba(91,184,212,0.35);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#eaf6fb,#d6eef6);border:1px solid rgba(91,184,212,0.3);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">👷</div>
+            <div style="font-size:14px;font-weight:700;color:#1a3a45;">محمد رضا سكران</div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <a href="https://docs.google.com/spreadsheets/d/1hnUjDiAHWQUeuegbsegiCPmKOEhcQYH456obnZwhGzI/edit?gid=1059900041#gid=1059900041" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:9px;background:rgba(91,184,212,0.12);border:1px solid rgba(91,184,212,0.4);border-radius:10px;text-decoration:none;color:#3a9ab8;font-size:12px;font-weight:700;">📊 الشيت</a>
+            <a href="https://wa.me/201100556763" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:9px;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.4);border-radius:10px;text-decoration:none;color:#1a7a3a;font-size:12px;font-weight:700;">💬 واتساب</a>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.88);border:1.5px solid rgba(91,184,212,0.35);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#eaf6fb,#d6eef6);border:1px solid rgba(91,184,212,0.3);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">👷</div>
+            <div style="font-size:14px;font-weight:700;color:#1a3a45;">محمد علي</div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <a href="https://docs.google.com/spreadsheets/d/18MpwYsGwUhTY2MjwdgCCwqKn6XWPB2CyWpFyNHGLkA8/edit?gid=419895956#gid=419895956" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:9px;background:rgba(91,184,212,0.12);border:1px solid rgba(91,184,212,0.4);border-radius:10px;text-decoration:none;color:#3a9ab8;font-size:12px;font-weight:700;">📊 الشيت</a>
+            <a href="https://wa.me/201009978492" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:9px;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.4);border-radius:10px;text-decoration:none;color:#1a7a3a;font-size:12px;font-weight:700;">💬 واتساب</a>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.88);border:1.5px solid rgba(91,184,212,0.35);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#eaf6fb,#d6eef6);border:1px solid rgba(91,184,212,0.3);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">👷</div>
+            <div style="font-size:14px;font-weight:700;color:#1a3a45;">سعيد</div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <a href="https://docs.google.com/spreadsheets/d/1zBEg1YRkOyhzL4SlPn6zY2x1UXD3Ba7oK6vCnTOvMCM/edit?gid=1999177983#gid=1999177983" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:9px;background:rgba(91,184,212,0.12);border:1px solid rgba(91,184,212,0.4);border-radius:10px;text-decoration:none;color:#3a9ab8;font-size:12px;font-weight:700;">📊 الشيت</a>
+            <a href="https://wa.me/201009978492" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:9px;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.4);border-radius:10px;text-decoration:none;color:#1a7a3a;font-size:12px;font-weight:700;">💬 واتساب</a>
+          </div>
+        </div>
+        <div style="background:rgba(255,255,255,0.88);border:1.5px solid rgba(91,184,212,0.35);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#eaf6fb,#d6eef6);border:1px solid rgba(91,184,212,0.3);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">⭐</div>
+            <div style="font-size:14px;font-weight:700;color:#1a3a45;">السيد مرجونه</div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <a href="https://docs.google.com/spreadsheets/d/1ANsRDeYkYIZeGP26obWND1pXHoJBYbz4/edit?gid=2078190238#gid=2078190238" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:9px;background:rgba(91,184,212,0.12);border:1px solid rgba(91,184,212,0.4);border-radius:10px;text-decoration:none;color:#3a9ab8;font-size:12px;font-weight:700;">📊 الشيت</a>
+            <a href="https://wa.me/201027205753" target="_blank" onclick="event.stopPropagation()" style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:9px;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.4);border-radius:10px;text-decoration:none;color:#1a7a3a;font-size:12px;font-weight:700;">💬 واتساب</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  var m = document.getElementById('calc-modal');
+  m.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  document.getElementById('c-price').value = '';
+  document.getElementById('c-months').value = '';
+  document.getElementById('c-rate').value = '';
+  document.getElementById('c-down').value = '25';
+  document.getElementById('c-err').style.display = 'none';
+  document.getElementById('c-res').style.display = 'none';
+}
+function closeCalc() {
+  document.getElementById('calc-modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function calcRun() {
+  var price   = parseFloat(document.getElementById('c-price').value);
+  var months  = parseInt(document.getElementById('c-months').value);
+  var rate    = parseFloat(document.getElementById('c-rate').value);
+  var downpct = parseFloat(document.getElementById('c-down').value);
+  var err = document.getElementById('c-err');
+  var res = document.getElementById('c-res');
+  err.style.display = 'none';
+  res.style.display = 'none';
+  if (isNaN(price)  || price  <= 0)           { err.textContent='⚠️ من فضلك أدخل سعر الجهاز'; err.style.display='block'; return; }
+  if (isNaN(months) || months<1||months>36)   { err.textContent='⚠️ عدد الأشهر بين 1 و 36'; err.style.display='block'; return; }
+  if (isNaN(downpct)||downpct<0||downpct>=100){ err.textContent='⚠️ نسبة المقدم بين 0 و 99'; err.style.display='block'; return; }
+  if (isNaN(rate)   || rate < 0)              { err.textContent='⚠️ من فضلك أدخل نسبة الفائدة'; err.style.display='block'; return; }
+  var down = price * (downpct / 100);
+  var rem  = price - down;
+  var mr   = (rate / 100 / 12) * months;
+  var mo   = (rem * (1 + mr)) / months;
+  function fmt(n){ return n.toLocaleString('ar-EG',{minimumFractionDigits:2,maximumFractionDigits:2})+' ج'; }
+  document.getElementById('c-downpct-lbl').textContent = downpct;
+  document.getElementById('c-r-down').textContent = fmt(down);
+  document.getElementById('c-r-mo').textContent   = fmt(mo);
+  res.style.display = 'block';
+}
+
+</script>
+
+<script src="links.js"></script>
+</body>
+</html>
