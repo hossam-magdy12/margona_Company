@@ -2,6 +2,7 @@ const views = {
   home:         { id: 'view-home',         label: null },
   admin:        { id: 'view-admin',        label: 'شيت الإدارة' },
   technicians:  { id: 'view-technicians',  label: 'الفنيين' },
+  reports:      { id: 'view-reports',      label: 'تسليم التقارير اليومية' },
 };
 
 let current = 'home';
