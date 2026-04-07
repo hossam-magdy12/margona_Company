@@ -247,9 +247,22 @@
           <input type="number" id="c-months" placeholder="مثال: 12" min="1" max="36" style="width:100%;padding:12px 42px 12px 12px;font-family:'Segoe UI',Tahoma,Arial,sans-serif;font-size:14px;background:rgba(234,246,251,0.7);border:1.5px solid rgba(91,184,212,0.55);border-radius:11px;color:#1a3a45;outline:none;transition:all .2s;direction:ltr;text-align:right;-moz-appearance:textfield;"></div>
         </div>
         <div style="margin-bottom:14px;">
-          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3a9ab8;margin-bottom:7px;">نسبة المقدم (%)</label>
-          <div style="position:relative;"><span style="position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:14px;opacity:.4;pointer-events:none;">💰</span>
-          <input type="number" id="c-down" placeholder="مثال: 25" min="0" max="100" step="1" value="25" style="width:100%;padding:12px 42px 12px 12px;font-family:'Segoe UI',Tahoma,Arial,sans-serif;font-size:14px;background:rgba(234,246,251,0.7);border:1.5px solid rgba(91,184,212,0.55);border-radius:11px;color:#1a3a45;outline:none;transition:all .2s;direction:ltr;text-align:right;-moz-appearance:textfield;"></div>
+          <label style="display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#3a9ab8;margin-bottom:7px;">طريقة المقدم</label>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+            <button id="c-mt1" onclick="cSwitchMethod(1)" style="padding:9px 8px;font-family:'Segoe UI',Tahoma,Arial,sans-serif;font-size:12px;font-weight:700;border-radius:10px;cursor:pointer;transition:all .2s;background:#3a9ab8;border:1.5px solid #3a9ab8;color:#fff;">📊 نسبة % </button>
+            <button id="c-mt2" onclick="cSwitchMethod(2)" style="padding:9px 8px;font-family:'Segoe UI',Tahoma,Arial,sans-serif;font-size:12px;font-weight:700;border-radius:10px;cursor:pointer;transition:all .2s;background:rgba(234,246,251,0.7);border:1.5px solid rgba(91,184,212,0.55);color:#3a9ab8;">💵 مبلغ ثابت</button>
+          </div>
+          <!-- حقل النسبة % -->
+          <div id="c-field-pct">
+            <div style="position:relative;"><span style="position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:14px;opacity:.4;pointer-events:none;">%</span>
+            <input type="number" id="c-down" placeholder="مثال: 25" min="0" max="100" step="1" value="25" style="width:100%;padding:12px 42px 12px 12px;font-family:'Segoe UI',Tahoma,Arial,sans-serif;font-size:14px;background:rgba(234,246,251,0.7);border:1.5px solid rgba(91,184,212,0.55);border-radius:11px;color:#1a3a45;outline:none;transition:all .2s;direction:ltr;text-align:right;-moz-appearance:textfield;"></div>
+          </div>
+          <!-- حقل المبلغ الثابت -->
+          <div id="c-field-amt" style="display:none;">
+            <div style="position:relative;"><span style="position:absolute;right:13px;top:50%;transform:translateY(-50%);font-size:14px;opacity:.4;pointer-events:none;">ج</span>
+            <input type="number" id="c-down-amt" placeholder="مثال: 1500" min="0" style="width:100%;padding:12px 42px 12px 12px;font-family:'Segoe UI',Tahoma,Arial,sans-serif;font-size:14px;background:rgba(234,246,251,0.7);border:1.5px solid rgba(91,184,212,0.55);border-radius:11px;color:#1a3a45;outline:none;transition:all .2s;direction:ltr;text-align:right;-moz-appearance:textfield;" oninput="cLivePreview()"></div>
+            <div id="c-pct-preview" style="display:none;margin-top:6px;padding:6px 12px;background:rgba(91,184,212,0.1);border:1px solid rgba(91,184,212,0.3);border-radius:8px;font-size:12px;color:#3a9ab8;">النسبة المكافئة: <strong id="c-pct-val">—</strong></div>
+          </div>
         </div>
         <div style="margin-bottom:14px;">
           <label style="display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#d32f2f;margin-bottom:7px;">نسبة الفائدة السنوية (%)</label>
@@ -351,7 +364,36 @@
 </div>
 
 <script>
+var cMethod = 1;
+
+function cSwitchMethod(m) {
+  cMethod = m;
+  var btn1 = document.getElementById('c-mt1');
+  var btn2 = document.getElementById('c-mt2');
+  var activeStyle = 'padding:9px 8px;font-family:\'Segoe UI\',Tahoma,Arial,sans-serif;font-size:12px;font-weight:700;border-radius:10px;cursor:pointer;transition:all .2s;background:#3a9ab8;border:1.5px solid #3a9ab8;color:#fff;';
+  var inactiveStyle = 'padding:9px 8px;font-family:\'Segoe UI\',Tahoma,Arial,sans-serif;font-size:12px;font-weight:700;border-radius:10px;cursor:pointer;transition:all .2s;background:rgba(234,246,251,0.7);border:1.5px solid rgba(91,184,212,0.55);color:#3a9ab8;';
+  btn1.style.cssText = m === 1 ? activeStyle : inactiveStyle;
+  btn2.style.cssText = m === 2 ? activeStyle : inactiveStyle;
+  document.getElementById('c-field-pct').style.display = m === 1 ? '' : 'none';
+  document.getElementById('c-field-amt').style.display = m === 2 ? '' : 'none';
+  document.getElementById('c-err').style.display = 'none';
+  document.getElementById('c-res').style.display = 'none';
+}
+
+function cLivePreview() {
+  var price = parseFloat(document.getElementById('c-price').value);
+  var amt   = parseFloat(document.getElementById('c-down-amt').value);
+  var preview = document.getElementById('c-pct-preview');
+  if (!isNaN(price) && price > 0 && !isNaN(amt) && amt > 0) {
+    document.getElementById('c-pct-val').textContent = ((amt / price) * 100).toFixed(1) + '%';
+    preview.style.display = 'block';
+  } else {
+    preview.style.display = 'none';
+  }
+}
+
 function openCalc() {
+  cMethod = 1;
   var m = document.getElementById('calc-modal');
   m.style.display = 'flex';
   document.body.style.overflow = 'hidden';
@@ -359,32 +401,44 @@ function openCalc() {
   document.getElementById('c-months').value = '';
   document.getElementById('c-rate').value = '';
   document.getElementById('c-down').value = '25';
+  document.getElementById('c-down-amt').value = '';
+  document.getElementById('c-pct-preview').style.display = 'none';
   document.getElementById('c-err').style.display = 'none';
   document.getElementById('c-res').style.display = 'none';
+  cSwitchMethod(1);
 }
 function closeCalc() {
   document.getElementById('calc-modal').style.display = 'none';
   document.body.style.overflow = '';
 }
 function calcRun() {
-  var price   = parseFloat(document.getElementById('c-price').value);
-  var months  = parseInt(document.getElementById('c-months').value);
-  var rate    = parseFloat(document.getElementById('c-rate').value);
-  var downpct = parseFloat(document.getElementById('c-down').value);
+  var price  = parseFloat(document.getElementById('c-price').value);
+  var months = parseInt(document.getElementById('c-months').value);
+  var rate   = parseFloat(document.getElementById('c-rate').value);
   var err = document.getElementById('c-err');
   var res = document.getElementById('c-res');
   err.style.display = 'none';
   res.style.display = 'none';
-  if (isNaN(price)  || price  <= 0)            { err.textContent='⚠️ من فضلك أدخل سعر الجهاز'; err.style.display='block'; return; }
-  if (isNaN(months) || months<1||months>36)    { err.textContent='⚠️ عدد الأشهر بين 1 و 36'; err.style.display='block'; return; }
-  if (isNaN(downpct)||downpct<0||downpct>=100) { err.textContent='⚠️ نسبة المقدم بين 0 و 99'; err.style.display='block'; return; }
-  if (isNaN(rate)   || rate < 0)               { err.textContent='⚠️ من فضلك أدخل نسبة الفائدة'; err.style.display='block'; return; }
-  var down = price * (downpct / 100);
-  var rem  = price - down;
-  var mr   = (rate / 100 / 12) * months;
-  var mo   = (rem * (1 + mr)) / months;
+  if (isNaN(price)  || price  <= 0)           { err.textContent='⚠️ من فضلك أدخل سعر الجهاز'; err.style.display='block'; return; }
+  if (isNaN(months) || months<1||months>36)   { err.textContent='⚠️ عدد الأشهر بين 1 و 36';  err.style.display='block'; return; }
+  if (isNaN(rate)   || rate < 0)              { err.textContent='⚠️ من فضلك أدخل نسبة الفائدة'; err.style.display='block'; return; }
+
+  var down, downpct;
+  if (cMethod === 1) {
+    downpct = parseFloat(document.getElementById('c-down').value);
+    if (isNaN(downpct) || downpct < 0 || downpct >= 100) { err.textContent='⚠️ نسبة المقدم بين 0 و 99'; err.style.display='block'; return; }
+    down = price * (downpct / 100);
+  } else {
+    down = parseFloat(document.getElementById('c-down-amt').value);
+    if (isNaN(down) || down < 0 || down >= price) { err.textContent='⚠️ المبلغ يجب أن يكون أقل من سعر الجهاز'; err.style.display='block'; return; }
+    downpct = (down / price) * 100;
+  }
+
+  var rem = price - down;
+  var mr  = (rate / 100 / 12) * months;
+  var mo  = (rem * (1 + mr)) / months;
   function fmt(n){ return n.toLocaleString('ar-EG',{minimumFractionDigits:2,maximumFractionDigits:2})+' ج'; }
-  document.getElementById('c-downpct-lbl').textContent = downpct;
+  document.getElementById('c-downpct-lbl').textContent = downpct.toFixed(1);
   document.getElementById('c-r-down').textContent = fmt(down);
   document.getElementById('c-r-mo').textContent   = fmt(mo);
   res.style.display = 'block';
