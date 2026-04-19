@@ -105,61 +105,94 @@
 <!-- ═══════════════════════════════
      VIEW: ADMIN
 ═══════════════════════════════ -->
-<div class="view" id="view-admin">
-  <div class="sec-title"><span>👷</span> الفنيين</div>
-  <div class="grid">
+<div id="tech-modal" onclick="closeTech()" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(10,30,40,0.75);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;overflow-y:auto;">
+  <div onclick="event.stopPropagation()" style="width:100%;max-width:560px;border-radius:24px;background:linear-gradient(160deg,#eaf6fb,#d6eef6);position:relative;box-shadow:0 30px 80px rgba(0,0,0,0.4);">
 
-    <a class="card" href="https://docs.google.com/spreadsheets/d/11iAKUc3N20RGwHC8oOrwE3ItKbzC5V7MUTOMHWQjE28/edit?gid=1578303868#gid=1578303868" target="_blank" style="animation-delay:0.05s">
-      <div class="card-top"><div class="card-icon">👷</div><div class="card-name">أحمد منير</div></div>
-      <div class="card-desc">شيت متابعة أحمد منير</div>
-      <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
-    </a>
+    <button onclick="closeTech()" style="position:absolute;top:14px;left:14px;background:rgba(91,184,212,0.2);border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;">✕</button>
 
-    <a class="card" href="https://docs.google.com/spreadsheets/d/1ewc5Wv1-FTOnt9XUJuEvyvkhkLUsVJdi6E4fWftnCXE/edit?gid=434353404#gid=434353404" target="_blank" style="animation-delay:0.1s">
-      <div class="card-top"><div class="card-icon">👷</div><div class="card-name">أحمد صابر</div></div>
-      <div class="card-desc">شيت متابعة أحمد صابر</div>
-      <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
-    </a>
+    <div style="padding:32px 24px;">
+      <div style="text-align:center;margin-bottom:22px;">
+        <div style="font-size:32px;">👷</div>
+        <div style="font-size:18px;font-weight:800;">شيتات الفنيين</div>
+      </div>
 
-    <a class="card" href="https://docs.google.com/spreadsheets/d/1qcsTyVAKLuM4QLCzNIDLRf15h7HYBsPOEqFTBD1lF5s/edit?gid=1105257873#gid=1105257873" target="_blank" style="animation-delay:0.15s">
-      <div class="card-top"><div class="card-icon">👷</div><div class="card-name">محمد رضا سكران</div></div>
-      <div class="card-desc">شيت متابعة محمد رضا سكران</div>
-      <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
-    </a>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;">
 
-    <a class="card" href="https://docs.google.com/spreadsheets/d/18MpwYsGwUhTY2MjwdgCCwqKn6XWPB2CyWpFyNHGLkA8/edit?gid=419895956#gid=419895956" target="_blank" style="animation-delay:0.2s">
-      <div class="card-top"><div class="card-icon">👷</div><div class="card-name">محمد علي</div></div>
-      <div class="card-desc">شيت متابعة محمد علي</div>
-      <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
-    </a>
+        <!-- 🔴 الجداد -->
 
-    <a class="card" href="https://docs.google.com/spreadsheets/d/1zBEg1YRkOyhzL4SlPn6zY2x1UXD3Ba7oK6vCnTOvMCM/edit?gid=1999177983#gid=1999177983" target="_blank" style="animation-delay:0.25s">
-      <div class="card-top"><div class="card-icon">👷</div><div class="card-name">سعيد</div></div>
-      <div class="card-desc">شيت متابعة سعيد</div>
-      <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
-    </a>
+        <!-- معتز -->
+        <div style="background:#fff;border-radius:16px;padding:16px;">
+          <b>معتز طلعت</b>
+          <div style="margin-top:10px;display:flex;gap:8px;">
+            <a href="https://docs.google.com/spreadsheets/d/1lAPDJtAhBCvnEkt3ZvMBYmPdG7zI-8m8RF6rs_EDSZU/edit?gid=1778535272#gid=1778535272" target="_blank">📊 الشيت</a>
+            <a href="https://wa.me/201000000000" target="_blank">💬 واتساب</a>
+          </div>
+        </div>
 
-    <a class="card" href="https://docs.google.com/spreadsheets/d/1ANsRDeYkYIZeGP26obWND1pXHoJBYbz4/edit?gid=2078190238#gid=2078190238" target="_blank" style="animation-delay:0.3s">
-      <div class="card-top"><div class="card-icon">⭐</div><div class="card-name">السيد مرجونه</div></div>
-      <div class="card-desc">شيت متابعة السيد مرجونه</div>
-      <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
-    </a>
+        <!-- عمر -->
+        <div style="background:#fff;border-radius:16px;padding:16px;">
+          <b>عمر فرج</b>
+          <div style="margin-top:10px;display:flex;gap:8px;">
+            <a href="https://docs.google.com/spreadsheets/d/1l5akMNeLPlvZAMD_8ZU7Zye4LjCKoUY72eYyjc87r3c/edit?gid=1293453832#gid=1293453832" target="_blank">📊 الشيت</a>
+            <a href="https://wa.me/201000000000" target="_blank">💬 واتساب</a>
+          </div>
+        </div>
 
-    <a class="card" href="https://docs.google.com/spreadsheets/d/1lAPDJtAhBCvnEkt3ZvMBYmPdG7zI-8m8RF6rs_EDSZU/edit?gid=1778535272#gid=1778535272" target="_blank" style="animation-delay:0.35s">
-      <div class="card-top"><div class="card-icon">👷</div><div class="card-name">معتز طلعت</div></div>
-      <div class="card-desc">شيت متابعة معتز طلعت</div>
-      <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
-    </a>
+        <!-- باقي الفنيين -->
 
-    <a class="card" href="https://docs.google.com/spreadsheets/d/1l5akMNeLPlvZAMD_8ZU7Zye4LjCKoUY72eYyjc87r3c/edit?gid=1293453832#gid=1293453832" target="_blank" style="animation-delay:0.4s">
-      <div class="card-top"><div class="card-icon">👷</div><div class="card-name">عمر فرج</div></div>
-      <div class="card-desc">شيت متابعة عمر فرج</div>
-      <div class="card-footer"><span class="card-type">Sheets</span><span class="card-arrow">↗</span></div>
-    </a>
+        <div style="background:#fff;border-radius:16px;padding:16px;">
+          <b>أحمد منير</b>
+          <div style="margin-top:10px;display:flex;gap:8px;">
+            <a href="https://docs.google.com/spreadsheets/d/11iAKUc3N20RGwHC8oOrwE3ItKbzC5V7MUTOMHWQjE28/edit?gid=1578303868#gid=1578303868" target="_blank">📊 الشيت</a>
+            <a href="https://wa.me/201100404634" target="_blank">💬 واتساب</a>
+          </div>
+        </div>
+
+        <div style="background:#fff;border-radius:16px;padding:16px;">
+          <b>أحمد صابر</b>
+          <div style="margin-top:10px;display:flex;gap:8px;">
+            <a href="https://docs.google.com/spreadsheets/d/1ewc5Wv1-FTOnt9XUJuEvyvkhkLUsVJdi6E4fWftnCXE/edit?gid=434353404#gid=434353404" target="_blank">📊 الشيت</a>
+            <a href="https://wa.me/201008605104" target="_blank">💬 واتساب</a>
+          </div>
+        </div>
+
+        <div style="background:#fff;border-radius:16px;padding:16px;">
+          <b>محمد رضا سكران</b>
+          <div style="margin-top:10px;display:flex;gap:8px;">
+            <a href="https://docs.google.com/spreadsheets/d/1qcsTyVAKLuM4QLCzNIDLRf15h7HYBsPOEqFTBD1lF5s/edit?gid=1105257873#gid=1105257873" target="_blank">📊 الشيت</a>
+            <a href="https://wa.me/201100556763" target="_blank">💬 واتساب</a>
+          </div>
+        </div>
+
+        <div style="background:#fff;border-radius:16px;padding:16px;">
+          <b>محمد علي</b>
+          <div style="margin-top:10px;display:flex;gap:8px;">
+            <a href="https://docs.google.com/spreadsheets/d/18MpwYsGwUhTY2MjwdgCCwqKn6XWPB2CyWpFyNHGLkA8/edit?gid=419895956#gid=419895956" target="_blank">📊 الشيت</a>
+            <a href="https://wa.me/201009978492" target="_blank">💬 واتساب</a>
+          </div>
+        </div>
+
+        <div style="background:#fff;border-radius:16px;padding:16px;">
+          <b>سعيد</b>
+          <div style="margin-top:10px;display:flex;gap:8px;">
+            <a href="https://docs.google.com/spreadsheets/d/1zBEg1YRkOyhzL4SlPn6zY2x1UXD3Ba7oK6vCnTOvMCM/edit?gid=1999177983#gid=1999177983" target="_blank">📊 الشيت</a>
+            <a href="https://wa.me/201009978492" target="_blank">💬 واتساب</a>
+          </div>
+        </div>
+
+        <div style="background:#fff;border-radius:16px;padding:16px;">
+          <b>السيد مرجونه</b>
+          <div style="margin-top:10px;display:flex;gap:8px;">
+            <a href="https://docs.google.com/spreadsheets/d/1ANsRDeYkYIZeGP26obWND1pXHoJBYbz4/edit?gid=2078190238#gid=2078190238" target="_blank">📊 الشيت</a>
+            <a href="https://wa.me/201027205753" target="_blank">💬 واتساب</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
 
   </div>
 </div>
-
 <!-- ═══════════════════════════════
      VIEW: TECHNICIANS
 ═══════════════════════════════ -->
